@@ -66,7 +66,7 @@ export const PopularServices = () => {
   const fettchData = async () => {
     try {
       await axios
-        .get(`https://fiverr-orkg.onrender.com/service/category?=service`)
+        .get(`https://fiverr-orkg.onrender.com/service/services`)
         .then((res) => {
           setData(res.data.services);
         });

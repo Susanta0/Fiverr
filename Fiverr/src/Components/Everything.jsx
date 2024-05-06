@@ -66,7 +66,7 @@ export const Everything = () => {
           </div>
         </div>
         <div>
-          {/* <video src={fiver} poster={poster}  controls /> */}
+         
           <video controls poster={poster}>
             <source src={fiver} type="video/mp4" />
           </video>

@@ -2,15 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
-// videos
-import sliderVideo1 from "../assets/sliderVideo1.mp4";
-import sliderVideo2 from "../assets/sliderVideo2.mp4";
-import sliderVideo3 from "../assets/sliderVideo3.mp4";
-// images
-import sliderFrame1 from "../assets/sliderFrame1.png";
-import sliderFrame2 from "../assets/sliderFrame2.png";
-import sliderFrame3 from "../assets/sliderFrame3.png";
-import sliderFrame4 from "../assets/sliderFrame4.png";
 import poster01 from "../assets/poster01.webp";
 
 function SampleNextArrow(props) {
@@ -34,45 +25,6 @@ function SamplePrevArrow(props) {
     />
   );
 }
-
-const sliderContent = [
-  {
-    id: 1,
-    image:
-      "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_560,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173395/testimonial-video-still-haerfest.jpg",
-    video: `${sliderVideo1}`,
-    heading: "Tim and Dan Joo, Co-Founders",
-    logo: `${sliderFrame1}`,
-    details: `"When you want to create a business bigger than yourself, you need a lot of help. That's what Fiverr does."`,
-  },
-  {
-    id: 2,
-    image:
-      "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_560,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173396/testimonial-video-still-lavender.jpg",
-    video: `${sliderVideo2}`,
-    heading: "Brighid Gannon (DNP, PMHNP-BC), Co-Founder",
-    logo: `${sliderFrame2}`,
-    details: `"We used Fiverr for SEO, our logo, website, copy, animated videos — literally everything. It was like working with a human right next to you versus being across the world."`,
-  },
-  {
-    id: 3,
-    image:
-      "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_560,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173399/testimonial-video-still-rooted.jpg",
-    video: `${sliderVideo3}`,
-    heading: "Kay Kim, Co-Founder",
-    logo: `${sliderFrame3}`,
-    details: `"It's extremely exciting that Fiverr has freelancers from all over the world — it broadens the talent pool. One of the best things about Fiverr is that while we're sleeping, someone's working."`,
-  },
-  {
-    id: 4,
-    image:
-      "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_560,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173414/testimonial-video-still-naadam.jpg",
-    video: "",
-    heading: "Caitlin Tormey, Chief Commercial Officer",
-    logo: `${sliderFrame4}`,
-    details: `"We've used Fiverr for Shopify web development, graphic design, and backend web development. Working with Fiverr makes my job a little easier every day."`,
-  },
-];
 
 export const Marketing = () => {
   var settings = {
@@ -114,9 +66,11 @@ export const Marketing = () => {
 
   const fettchData = async () => {
     try {
-      await axios.get(sliderContent).then((res) => {
-        setData(res.config.url);
-      });
+      await axios
+        .get(`https://fiverr-orkg.onrender.com/service/cofounders`)
+        .then((res) => {
+          setData(res.data.services);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -131,12 +85,12 @@ export const Marketing = () => {
       <div className="slider-container mx-20 mt-24">
         <Slider {...settings}>
           {data.map((item) => (
-            <div key={item.id}>
-              <div className="flex items-center">
-                <div className="w-1/2">
+            <div key={item._id}>
+              <div className="flex items-center justify-around">
+                <div className="w-[34em]">
                   <video
-                    src={item.video}
-                    poster={item.image}
+                    src={item.video[0]}
+                    poster={item.video[1]}
                     controls
                     preload="auto"
                   ></video>
@@ -144,9 +98,7 @@ export const Marketing = () => {
 
                 <div className="w-1/2 flex flex-col gap-5">
                   <div className="flex items-center">
-                    <h2 className="text-xl text-[#74767E]">
-                      {item.heading} |{" "}
-                    </h2>
+                    <h2 className="text-xl text-[#74767E]">{item.title} | </h2>
                     <img
                       src={item.logo}
                       alt="logo"
