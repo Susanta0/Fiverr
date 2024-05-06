@@ -65,7 +65,7 @@ export const Allgigs = ({heading, style, color}) => {
     
       const fetchData = async (token) => {
         try {
-          const res =await axios.get(`https://fiverr-gv4b.onrender.com/gigs/showgig`,{
+          const res =await axios.get(`https://fiverr-orkg.onrender.com/gigs/showgig`,{
             headers: {
               Authorization: `Bearer ${token}`
           }

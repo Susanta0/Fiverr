@@ -23,7 +23,7 @@ export const Register = (props) => {
     try {
       const res = await axios({
         method: "POST",
-        url: "https://fiverr-gv4b.onrender.com/user/register",
+        url: "https://fiverr-orkg.onrender.com/user/register",
         headers: {
           "Content-Type": "application/json",
         },

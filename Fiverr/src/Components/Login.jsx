@@ -17,7 +17,7 @@ export const Login = ({user}) => {
       try {
         const res = await axios({
           method: "POST",
-          url: "https://fiverr-gv4b.onrender.com/user/login",
+          url: "https://fiverr-orkg.onrender.com/user/login",
           headers: {
             "Content-Type": "application/json",
           },
