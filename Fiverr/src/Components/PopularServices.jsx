@@ -40,67 +40,67 @@ function SamplePrevArrow(props) {
 let services=[
   {
       id:1,
-      image:`${services1}`,
+      image:services1,
       title:"Add talent to AI",
       catagory:"AI Artists"
   },
   {
       id:2,
-      image:`${services2}`,
+      image:services2,
       title:"Build your brand",
       catagory:"Logo Design"
   },
   {
       id:3,
-      image:`${services3}`,
+      image:services3,
       title:"Customize your site",
       catagory:"WordPress"
   },
   {
       id:4,
-      image:`${services4}`,
+      image:services4,
       title:"Share your message",
       catagory:"Voice Over"
   },
   {
       id:5,
-      image:`${services5}`,
+      image:services5,
       title:"Engage your audience",
       catagory:"Video Explainer"
   },
   {
       id:6,
-      image:`${services6}`,
+      image:services6,
       title:"Reach more customers",
       catagory:"Social Media"
   },
   {
       id:7,
-      image:`${services7}`,
+      image:services7,
       title:"Unlock growth online",
       catagory:"SEO"
   },
   {
       id:8,
-      image:`${services8}`,
+      image:services8,
       title:"Color your dreams",
       catagory:"LLLustration"
   },
   {
       id:9,
-      image:`${services9}`,
+      image:services9,
       title:"Go global",
       catagory:"Translation"
   },
   {
       id:10,
-      image:`${services10}`,
+      image:services10,
       title:"Learn your business",
       catagory:"Data Entry"
   },
   {
       id:11,
-      image:`${services11}`,
+      image:services11,
       title:"Showcase your story",
       catagory:"Book Covers"
   }
