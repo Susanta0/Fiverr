@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 // images
-import services1 from "../../public/assets/services1.png"
+// import services1 from "../../public/assets/services1.png"
 import services2 from "../assets/services2.png"
 import services3 from "../assets/services3.png"
 import services4 from "../assets/services4.png"
@@ -14,7 +14,7 @@ import services8 from "../assets/services8.png"
 import services9 from "../assets/services9.png"
 import services10 from "../assets/services10.png"
 import services11 from "../assets/services11.png"
-
+// const services11 ="../assets/services11.png"
 import styles from "./Popular.module.css";
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -40,7 +40,7 @@ function SamplePrevArrow(props) {
 let services=[
   {
       id:1,
-      image:services1,
+      image:"../../public/assets/services1.png",
       title:"Add talent to AI",
       catagory:"AI Artists"
   },
