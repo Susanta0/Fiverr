@@ -4,7 +4,7 @@ const manyServiceRouter=Router()
 
 
 
-manyServiceRouter.get("/category?", async (req, res)=>{
+manyServiceRouter.get("/:category?", async (req, res)=>{
     try {
         let query = {};
         if (req.params.category) {
@@ -23,9 +23,9 @@ manyServiceRouter.get("/category?", async (req, res)=>{
 })
 
 manyServiceRouter.post("/addservice", async (req, res)=>{
-    const {image, title, details, category}=req.body
+    const {image, logo, title, details, video, category}=req.body
     try {
-        const serviceDetails= new serviceModel({image, title, details, category})
+        const serviceDetails= new serviceModel({image, logo, title, details, video, category})
         await serviceDetails.save()
         return res.status(201).json({message:"service details added successfully"})
     } catch (error) {
@@ -35,9 +35,9 @@ manyServiceRouter.post("/addservice", async (req, res)=>{
 
 
 manyServiceRouter.patch("/editservice/:id", async (req, res)=>{
-    const {image, title, details}= req.body
+    const {image, logo, title, details, video}= req.body
     try {
-        const editservice= await serviceModel.findByIdAndUpdate(req.params.id,{image, title, details})
+        const editservice= await serviceModel.findByIdAndUpdate(req.params.id,{image, logo, title, details, video})
         await editservice.save()
         return res.status(201).send({message:"Service details updated successfully"})
     } catch (error) {

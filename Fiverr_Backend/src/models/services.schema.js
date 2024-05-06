@@ -1,11 +1,12 @@
-const { Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose");
 const serviceSchema = new Schema(
   {
-    image: { type: String, required: true },
-    title: { type: String, required: true },
-    details: { type: String, required: true },
-    category: { type: String, required: true }
-    
+    image: { type: String },
+    logo: { type: String },
+    title: { type: String },
+    details: { type: String },
+    video: { type: [String] },
+    category: { type: String },
   },
   { versionKey: false }
 );
