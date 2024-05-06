@@ -3,6 +3,7 @@ const cors=require("cors")
 const connectDb = require("./src/config/db")
 const userRouter = require("./src/routes/user.routes")
 const gigsRouter = require("./src/routes/gigs.routes")
+const manyServiceRouter = require("./src/routes/manyservices.routes")
 const app=express()
 require("dotenv").config()
 
@@ -13,6 +14,7 @@ app.use(express.json())
 
 app.use("/user", userRouter)
 app.use("/gigs", gigsRouter)
+app.use("/service", manyServiceRouter)
 
 app.get("/", (req, res)=>{
     res.status(200).send("This is the home page")
