@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 // images
-import services1 from "../assets/services1.png"
+import services1 from "../../public/assets/services1.png"
 import services2 from "../assets/services2.png"
 import services3 from "../assets/services3.png"
 import services4 from "../assets/services4.png"
