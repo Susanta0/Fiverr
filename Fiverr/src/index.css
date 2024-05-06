@@ -114,6 +114,3 @@
     transform: translate(-50%, -50%);
   }
  
-  .chakra-accordion__item :first-child:hover{
-    background-color: white;
-  }
