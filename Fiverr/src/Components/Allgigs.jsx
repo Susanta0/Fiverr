@@ -70,7 +70,7 @@ export const Allgigs = ({heading, style, color}) => {
               Authorization: `Bearer ${token}`
           }
           })
-            console.log(res.data.gigDetails)
+            console.log(res.data.gigDetails);
             setData(res.data.gigDetails)
         } catch (error) {
           console.log(error);
@@ -96,7 +96,7 @@ export const Allgigs = ({heading, style, color}) => {
         className={`my-5 py-3 ${styles.slick_list}`}
       >
         {data.map((ele) => (
-          <div key={ele.id} className=" w-[260.4px]">
+          <div key={ele._id} className=" w-[260.4px]">
             <img src={ele.posterImages[0]} alt="image" className="w-[285.4px] h-[143.4px] m-auto rounded-md"/>
             <div className=" flex items-center flex-row gap-2">
               <img src={ele.logo} alt="logo" className="rounded-full w-[24px] h-[24px]" />

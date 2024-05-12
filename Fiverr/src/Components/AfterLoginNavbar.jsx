@@ -17,20 +17,24 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
-  Box,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { Dropdown } from "./Dropdown";
+import { useNavigate } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-export const AfterLoginNavbar = () => {
+export const AfterLoginNavbar = ({hide}) => {
   const logout =()=>{
     localStorage.removeItem("token")
     window.location.href="/"
   }
+
+  const navigate= useNavigate()
+  const handleSeller = ()=>{
+      navigate(`/becomeseller`)
+  }
+
   return (
     <Disclosure as="nav" className=" bg-white border fixed z-40 w-[100%]">
       {({ open }) => (
@@ -66,7 +70,7 @@ export const AfterLoginNavbar = () => {
                     </g>
                   </svg>
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
+                <div className="hidden sm:ml-6 sm:block" style={{display:`${hide}`}}>
                   <div className="flex">
                     <input
                       type="search"
@@ -79,7 +83,7 @@ export const AfterLoginNavbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center justify-between sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div style={{display:`${hide}`}} className="absolute inset-y-0 right-0 flex items-center justify-between sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div className="flex flex-row items-center absolute right-[5%] gap-4 ">
                   <Accordion defaultIndex={[]} allowMultiple>
                     <AccordionItem>
@@ -182,15 +186,15 @@ export const AfterLoginNavbar = () => {
                       <hr />
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <button
                             className={classNames(
                               active ? "" : "",
                               "block px-4 py-2 text-1xl text-[#74767E] font-semibold hover:text-[#35C783]"
                             )}
+                            onClick={handleSeller}
                           >
                             Become a Seller
-                          </a>
+                          </button>
                         )}
                       </Menu.Item>
                       <Menu.Item>
@@ -308,35 +312,3 @@ export const AfterLoginNavbar = () => {
     </Disclosure>
   );
 };
-
-
-
-
-
-// import { useHistory } from 'react-router-dom'; // Assuming you're using React Router
-
-// function Logout() {
-//     const history = useHistory();
-
-//     // Function to handle logout
-//     const handleLogout = () => {
-//         // Clear session data (e.g., authentication token)
-//         clearSessionData();
-
-//         // Redirect to login page
-//         history.push('/login');
-//     };
-
-//     const clearSessionData = () => {
-//         // Code to clear session data (e.g., authentication token)
-//         // Example: localStorage.removeItem("authToken");
-//     };
-
-//     return (
-        
-//                     <button onClick={handleLogout}>Logout</button>
-
-//     );
-// }
-
-// export default Logout;

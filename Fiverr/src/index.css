@@ -6,7 +6,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none
 }
+
 .slick-slider > .slick-prev {
   z-index: 10;
   width: 50px;
@@ -65,10 +67,6 @@
   border-bottom: 2px solid #1dbf73;
 }
 
-
-
-
-
 .popup {
   position: fixed;
   z-index: 1;
@@ -86,10 +84,6 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* padding: 20px; */
-  /* border-radius: 5px; */
-  /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); */
-  /* width: 40%; */
   display: flex;
   }
   
