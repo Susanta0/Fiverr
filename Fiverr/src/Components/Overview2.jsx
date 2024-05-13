@@ -15,6 +15,9 @@ export const Overview2 = () => {
   const next3 = () => {
     navigate(`/becomeseller/sellercretor/srller_id/overview/do/personal_info`);
   };
+  const backNavigateLink=()=>{
+    navigate(`/becomeseller/sellercretor/srller_id/overview`)
+}
   return (
     <>
       <AfterLoginNavbar hide="none" />
@@ -33,7 +36,7 @@ export const Overview2 = () => {
         icon5={null}
         iconPara5=""
         nextNavigateLink={next3}
-        backNavigateLink="/becomeseller/sellercretor/srller_id/overview"
+        backNavigateLink={backNavigateLink}
       />
     </>
   );

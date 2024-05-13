@@ -16,6 +16,9 @@ export const Overview = () => {
     const next2=()=>{
         navigate(`/becomeseller/sellercretor/srller_id/overview/do`)
     }
+    const backNavigateLink=()=>{
+        navigate(`/becomeseller/sellercretor/srller_id`)
+    }
 
   return (
     <>
@@ -35,7 +38,7 @@ export const Overview = () => {
     icon5={<MdLockOutline className='w-10 h-10 text-[#65676D]'/>}
     iconPara5="To keep our community secure for everyone, we may ask you to verify your ID."
     nextNavigateLink={next2}
-    backNavigateLink="/becomeseller/sellercretor/srller_id"
+    backNavigateLink={backNavigateLink}
     />
     </>
   )
@@ -78,7 +81,7 @@ export const OverviewDashbord = ({image, backNavigateLink, nextNavigateLink, hea
         </div>
         <div className='flex items-center gap-6'>
             <button onClick={nextNavigateLink} className='font-bold px-12 py-3 bg-[#1DBF73] text-white rounded-sm hover:shadow-xl'>Continue</button>
-            <a href={backNavigateLink} className='text-[#5F83EB] hover:underline'>Back</a>
+            <button onClick={backNavigateLink} className='text-[#5F83EB] hover:underline'>Back</button>
         </div>
     </div>
     </div>
